@@ -1,0 +1,87 @@
+body {
+  margin:0px;
+}
+
+nav {
+  margin: 0px;
+  padding:30px;
+  background-color:#473A2D;
+  text-align: right;
+}
+
+nav li {
+  display: inline;
+  margin: 0px;
+  padding:10px;
+  float: 70px;
+
+}
+
+nav li:hover {
+
+  margin: 0px;
+  padding:10px;
+  background-color:#5b4d3b;
+}
+
+header {
+  margin: 250px;
+}
+
+#wrapper {
+  display:table;
+  width:auto;
+}
+#row {
+  display:table-row;
+}
+#geo {
+  display:table-cell;
+  background-color:#bd9055;
+  width:33%;
+}
+#mer {
+  display:table-cell;
+  background-color:#e0a962;
+  width:33%;
+}
+#zem {
+  display:table-cell;
+  background-color:#f6ba6e;
+  width:33%;
+}
+
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+.table1 {
+  float:left;
+  width: 50%;
+
+
+}
+.table2 {
+  float: right;
+  width: 50%;
+
+
+}
+.tables table1 table2 {
+  margin: 0;
+  padding:0;
+
+  }
