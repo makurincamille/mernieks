@@ -6,6 +6,19 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="CSS/style.css" />
 	<title>Mērniecība</title>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		function initialize() {
+			var mapCanvas = document.getElementById('map-canvas');
+			var mapOptions = {
+				center: new google.maps.LatLng(56.949288, 24.104483),
+				zoom: 14,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(mapCanvas, mapOptions)
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 
 <body>
@@ -28,11 +41,11 @@
 	</header>
 	<section>
 		<a name="Pakalpojumi"></a>
-		<h2>Pakalpojumi</h2>
+		<h2 class="h2bright">Pakalpojumi</h2>
 		<div id="wrapper">
 			<div id="row">
 				<div id="geo">
-					<h3>ĢEODĒZIJA</h3>
+					<h3>Ģeodēzija</h3>
 					<ul>
 						<li>Topografiskā uzmērīšana un plānu izgatavošana mērogā 1:250,1:500, 1:1000,1:2000;</li>
 						<li>Apakšzemes komunikāciju uzmērīšana un saskaņošana;</li>
@@ -42,7 +55,7 @@
 					</ul>
 				</div>
 				<div id="mer">
-					<h3>MĒRNIECĪBA</h3>
+					<h3>Mērniecība</h3>
 					<ul>
 						<li>Zemesgabalu robežu uzmērīšana zemes un būvju reģistrācijai;</li>
 						<li>Zemesgabalu robežu noteikšana dabā;</li>
@@ -54,7 +67,7 @@
 					</ul>
 				</div>
 				<div id="zem">
-					<h3>ZEMES IERĪCĪBA</h3>
+					<h3>Zemes ierīcība</h3>
 					<ul>
 						<li>Zemes ierīcības projektu izstrāde;</li>
 						<li>Zemes ierīcības projektu saskaņošana.</li>
@@ -62,7 +75,7 @@
 				</div>
 			</div>
 		</div>
-		<h2>PAKALPOJUMU IZCENOJUMI</h2>
+		<h2 class="h2bright">Pakalpojumu izcenojumi</h2>
 		<div class="tables">
 			<div class="table1">
 				<p>Par topogrāfiskās informācijas izsniegšanu (tajā skaitā ielu sarkano līniju), pieņemšanu, pārbaudi, ievadīšanu datu planšetēs, ievadīšanu datubāzē, reģistrēšanu un nosūtīšanu pašvaldībai:
@@ -124,40 +137,72 @@
 		</div>
 	</section>
 	<section>
-		<a name="Par mums"></a>
-		<h2>PAR MUMS</h2>
-		<p>
-			Mūsu uzņēmuma veiksmīgas pastāvēšanas un darbības pamatā ir kvalitatīvi padarīts darbs, lojalitāte pret katru klientu un demokrātiskas cenas kā uzņēmumiem, tā privātpersonām. Darbinieki mērniecības jomā strādā jau kopš 1996. gada, darba pieredze ir uzkrāta
-			strādājot gan valsts iestādēs, gan privātos uzņēmumos, bet 2012. gadā apvienojoties mērniecības nozares speciālistiem tika nodibināts uzņēmums SIA "Ventspils mērnieks". Šajā īsajā uzņēmuma pastāvēšanas laikā, tas sevi ir pierādījis kā uzticams un profesionāls
-			sadarbības partneris. To pierāda mūsu patstāvīgie klienti un viņu uzticība mūsu darbam.
-		</p>
-		<h2>Edgars Ūdris</h2>
-		<p>tel. +371 29114401</p>
-		<p>edgars@ventspilsmernieks.lv</p>
-		<p>Zemes ierīcības darbi sertifikāta Nr.BA-72</p>
-		<p>Kadastrālās uzmērīšanas darbi sertifikāta Nr. BB-73</p>
-		<p>Speciālists veiks uzdevumus, kas saistīti ar nekustamā īpašuma objektu kadastrālo uzmērīšanu un topogrāfisko izpēti būvniecības un teritorijas plānošanas vajadzībām, datu reģistrāciju un aktualizāciju Nekustamā īpašuma valsts kadastra reģistrā (turpmāk
-			tekstā - NĪVKR).</p>
-		<p> Uzmērīšanas, zemes ierīcības darbu un NĪVKR dokumentācijas noformēšanu un kārtošanu, kā arī zemes robežu un situācijas plānu, zemes robežu, situāciju un apgrūtinājuma plānu izstrādi.</p>
-		<h2>Tomass Soopargs</h2>
-		<p>tel. +371 29235562</p>
-		<p>tomass@ventspilsmernieks.lv</p>
-		<p>Ģeodēziskie darbi sertifikāta Nr. BC-71</p>
-		<p>Speciālists veiks uzdevumus, kas saistīti ar nekustamā īpašuma objektu ģeodēzisko izpēti būvniecības un teritorijas plānošanas vajadzībām, ģeodēzisko datu reģistrāciju un aktualizāciju Nekustamā īpašuma valsts kadastra reģistrā.</p>
-		<p> Uzmērīs un izgatavos topogrāfiskos plānus objektiem, klientam vēlamajā mērogā. Veiks virszemes un apakšzemes inženierkomunikāciju uzmērīšanu un attēlojuma saskaņošanu ar inženierkomunikāciju turētājiem.</p>
+		<div class="container">
+			<a name="Par mums"></a>
+			<h2 class="h2dark">Par mums</h2>
+			<p>
+				Mūsu uzņēmuma veiksmīgas pastāvēšanas un darbības pamatā ir kvalitatīvi padarīts darbs, lojalitāte pret katru klientu un demokrātiskas cenas kā uzņēmumiem, tā privātpersonām. Darbinieki mērniecības jomā strādā jau kopš 1996. gada, darba pieredze ir uzkrāta
+				strādājot gan valsts iestādēs, gan privātos uzņēmumos, bet 2012. gadā apvienojoties mērniecības nozares speciālistiem tika nodibināts uzņēmums SIA "Ventspils mērnieks". Šajā īsajā uzņēmuma pastāvēšanas laikā, tas sevi ir pierādījis kā uzticams un
+				profesionāls sadarbības partneris. To pierāda mūsu patstāvīgie klienti un viņu uzticība mūsu darbam.
+			</p>
+		</div>
+		<div class="persons">
+			<div class="pers1">
+				<h2>Edgars Ūdris</h2>
+				<p>tel. +371 29114401</p>
+				<p>edgars@ventspilsmernieks.lv</p>
+				<div class="sertifikate">
+					<p class="s1">Zemes ierīcības darbi sertifikāta Nr.BA-72</p>
+					<p class="s2">Kadastrālās uzmērīšanas darbi sertifikāta Nr. BB-73</p>
+				</div>
+				<p>Speciālists veiks uzdevumus, kas saistīti ar nekustamā īpašuma objektu kadastrālo uzmērīšanu un topogrāfisko izpēti būvniecības un teritorijas plānošanas vajadzībām, datu reģistrāciju un aktualizāciju Nekustamā īpašuma valsts kadastra reģistrā (turpmāk
+					tekstā - NĪVKR).</p>
+				<p> Uzmērīšanas, zemes ierīcības darbu un NĪVKR dokumentācijas noformēšanu un kārtošanu, kā arī zemes robežu un situācijas plānu, zemes robežu, situāciju un apgrūtinājuma plānu izstrādi.</p>
+			</div>
+			<div class="pers2">
+				<h2>Tomass Soopargs</h2>
+				<p>tel. +371 29235562</p>
+				<p>tomass@ventspilsmernieks.lv</p>
+				<div class="sertifikate">
+					<p class="s3">Ģeodēziskie darbi sertifikāta Nr. BC-71</p>
+				</div>
+				<p>Speciālists veiks uzdevumus, kas saistīti ar nekustamā īpašuma objektu ģeodēzisko izpēti būvniecības un teritorijas plānošanas vajadzībām, ģeodēzisko datu reģistrāciju un aktualizāciju Nekustamā īpašuma valsts kadastra reģistrā.</p>
+				<p> Uzmērīs un izgatavos topogrāfiskos plānus objektiem, klientam vēlamajā mērogā. Veiks virszemes un apakšzemes inženierkomunikāciju uzmērīšanu un attēlojuma saskaņošanu ar inženierkomunikāciju turētājiem.</p>
+			</div>
+		</div>
 	</section>
 	<section>
 		<a name="Klienti"></a>
-		<h2>KLIENTI</h2>
+		<h2 class="h2bright">Klienti</h2>
 	</section>
 	<footer>
 		<a name="Kontakti"></a>
-		<h2>KONTAKTI</h2>
-		<h5>SIA "VENTSPILS MĒRNIEKS"</h5>
-		<p>tālrunis: + 371 29235562, 29114401</p>
-		<p>e-pasts: birojs@ventspilsmernieks.lv</p>
-		<p>Vasarnīcu iela 9</p>
-		<p>Ventspils, LV-3601</p>
+		<h2 class="h2dark">Kontakti</h2>
+		<div id="map-canvas">
+
+		</div>
+		<div class="kontakti">
+
+			<h5>SIA "VENTSPILS MĒRNIEKS"</h5>
+			<p>tālrunis: + 371 29235562, 29114401</p>
+			<p>e-pasts: birojs@ventspilsmernieks.lv</p>
+			<p>Vasarnīcu iela 9</p>
+			<p>Ventspils, LV-3601</p>
+		</div>
+		<div class="mail">
+			<form>
+
+				<input type="text" name="inputBox" placeholder="Vārds">
+
+				<input type="text" name="inputBox" placeholder="ē-pasts">
+
+				<input type="submit">
+			</form>
+			<textarea name="massage" cols="50" rows="15">
+
+			</textarea>
+		</div>
+
 	</footer>
 </body>
 
